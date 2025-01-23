@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 // Use cors middleware to allow all origins
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Proxy server is working well');
+});
+
 app.use('/proxy', async (req, res) => {
     const url = req.query.url; // Get the URL from the query parameter
     try {
